@@ -2,7 +2,7 @@ import numpy as np
 
 def load_imputation_function(imputation_type):
     print("Imputation type: ", imputation_type)
-    if imputation_type == "zero_imp":
+    if imputation_type == "mean":
         return zero_imputation
     elif imputation_type == "fwd":
         return forward_imputation
@@ -15,7 +15,6 @@ def zero_imputation(data):
         ele[np.isnan(ele)] = 0
         newdata.append(ele)
     return newdata
-
 
 def forward_imputation(data):
     for num in range(len(data)):

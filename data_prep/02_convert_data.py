@@ -148,14 +148,14 @@ if __name__ == "__main__":
     try: I = int(sys.argv[2])
     except: I = 0
     try: P = int(sys.argv[3])
-    except: P = 0
+    except: P = 4
     try: seed = int(sys.argv[4])
     except: seed = 1
     
     root = "../data"
     
-    scaling = ["no_scale", "standard"][S]
-    imputation = ["zero_imp", "linear", "fwd"][I]
+    scaling = ["no_scale", "standard", "custom"][S]
+    imputation = ["mean", "fwd"][I]
     preprocess = [None, "v1", "v2", "v3", "v4", "v5", "v6", "v7"][P]
     dc = DataConverter(root, scaling, imputation, preprocess, seed=seed)
     dc.main()

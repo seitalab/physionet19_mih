@@ -1,16 +1,19 @@
-# Location of challenge data
+# 1. Environment settings
 
-Place unzipped challenge data at 
-`./data/physionet2019/raw`
+Run `pip install -r requirements.txt`
 
-# Data preparation
+# 2. Place challenge data
 
-1. Run `01_makedataset.py`
-2. Run `02_convert_data.py`
+1. Place challenge data at `./data/physionet2019/raw/`.
+2. Unzip challenge data.
+
+# 3. Data preparation
+
+1. `cd data_prep/`
+2. Run `python 01_makedataset.py`
+3. Run `python 02_convert_data.py <scaling> <imputation> <preprocess> <seed>`
+
       Choose preprocess type, imputation type and scaler type.
-<<<<<<< HEAD
-      
-=======
       - <scaling> : Scaling function to call from `custom_scalers.py`
       
             - 0: no scaling
@@ -36,4 +39,3 @@ Place unzipped challenge data at
       train,valid,test
       0.431469,0.415992,0.420764
       ```
->>>>>>> 1636956... Update README.md
